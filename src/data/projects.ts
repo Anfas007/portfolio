@@ -4,6 +4,11 @@ import qrImg from "../assets/images/projects/health-passport/qr.png";
 import emergencyImg from "../assets/images/projects/health-passport/emergency.png";
 import emergency2Img from "../assets/images/projects/health-passport/emergency2.png";
 import architectureImg from "../assets/images/projects/health-passport/architecture.png";
+import attendanceImg from "../assets/images/projects/attendance/attendance.png";
+import loginImg from "../assets/images/projects/attendance/login.png";
+import adminImg from "../assets/images/projects/attendance/admin.png";
+import faceRecognitionImg from "../assets/images/projects/attendance/faceRecognition.png";
+import attendanceReportImg from "../assets/images/projects/attendance/attendanceReport.png"
 
 
 export const projects = [
@@ -13,16 +18,16 @@ export const projects = [
     title: "AI Emergency Health Passport",
 
     shortDescription:
-      "AI-powered healthcare platform enabling secure QR-based emergency access to patient medical records.",
+      "An AI-powered healthcare platform designed to provide secure, privacy-aware access to critical patient information during medical emergencies.",
 
     overview:
-      "Developed a healthcare platform that enables first responders and hospitals to securely access emergency patient records through QR codes while preserving patient privacy.",
+      "Developed a healthcare platform that enables first responders and hospitals to securely access essential patient medical records through QR-based emergency access, while maintaining privacy and controlled access to sensitive information.",
 
     problem:
-      "During medical emergencies, hospitals often lack instant access to critical patient information such as allergies, medications and medical history, delaying treatment.",
+      "During medical emergencies, healthcare providers may not have immediate access to critical patient information such as allergies, medications, medical history, and existing conditions, potentially delaying informed treatment.",
 
     solution:
-      "Designed an AI-powered Emergency Health Passport using FastAPI, Flutter, React and MongoDB with secure QR-based emergency access and AI-assisted clinical decision support.",
+      "Designed and developed an AI-powered Emergency Health Passport that combines secure QR-based access with AI-assisted medical insights, enabling healthcare professionals to quickly understand a patient's medical context during critical situations.",
 
     technologyStack: [
   {
@@ -91,35 +96,35 @@ export const projects = [
     src: doctorImg,
     title: "Doctor Dashboard",
     description:
-      "Doctors can access patient records, consultation history and emergency requests from a single dashboard.",
+      "Provides doctors with centralized access to patient records, consultations, and emergency requests.",
   },
 
   {
     src: mobileImg,
     title: "Patient Mobile App",
     description:
-      "Patients manage their health profile, prescriptions and emergency QR code through the Flutter application.",
+      "Enables patients to manage their medical profile, prescriptions, and emergency QR access.",
   },
 
   {
     src: qrImg,
     title: "Emergency QR Access",
     description:
-      "A unique QR code allows authorized emergency responders to securely retrieve critical medical information.",
+      "Enables secure QR-based access to critical patient information during medical emergencies.",
   },
 
   {
     src: emergencyImg,
     title: "Emergency Consultation",
     description:
-      "Healthcare professionals can instantly review allergies, medications and patient history during emergencies.",
+      "Allows healthcare professionals to quickly review allergies, medications, and medical history.",
   },
 
   {
     src: emergency2Img,
     title: "AI Medical Summary",
     description:
-      "AI generates a concise medical summary highlighting allergies, chronic conditions and important clinical insights.",
+      "Generates a concise AI-assisted summary highlighting allergies, conditions, medications, and key clinical information.",
   },
 ],
 
@@ -136,23 +141,63 @@ export const projects = [
   title: "Smart Attendance Management System",
 
   shortDescription:
-    "A face recognition-based attendance management system that automates student attendance with real-time recognition and reporting.",
+    "Automating attendance with computer vision to make student tracking faster, more accurate, and less dependent on manual processes.",
 
   overview:
-    "Developed a web-based attendance management system using Django and OpenCV to automate attendance recording through face recognition. The system improves accuracy, reduces manual effort, and provides administrators with attendance reports and student management features.",
+    "Developed a web-based Smart Attendance Management System using Django, OpenCV, face_recognition, and PostgreSQL to automate student identification and attendance recording. The system allows administrators to manage student records, capture attendance through real-time face recognition, validate students based on course and semester, and monitor attendance through a centralized dashboard.",
 
   problem:
-    "Traditional attendance systems rely on manual roll calls or paper-based records, which are time-consuming, prone to human error, and vulnerable to proxy attendance.",
+    "Traditional attendance systems rely on manual roll calls or paper-based records, which are time-consuming, prone to human errors, and vulnerable to proxy attendance. Managing attendance separately for different courses and semesters can also make record maintenance difficult.",
 
   solution:
-    "Built a face recognition-based attendance system using Django, OpenCV, and MySQL that automatically identifies students, marks attendance in real time, and generates attendance reports through an intuitive admin dashboard.",
+    "Built a face recognition-based attendance system using Django, OpenCV, face_recognition, and PostgreSQL that automatically identifies registered students, validates their selected course and semester, and records attendance in real time. The system also provides an admin dashboard for monitoring attendance, viewing reports, and downloading attendance details.",
 
-  technologies: [
-    "Python",
-    "Django",
-    "OpenCV",
-    "MySQL"
-  ],
+  technologyStack: [
+  {
+    category: "Frontend",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+    ],
+  },
+  {
+    category: "Backend",
+    technologies: [
+      "Python",
+      "Django",
+    ],
+  },
+  {
+    category: "Database",
+    technologies: [
+      "PostgreSQL",
+    ],
+  },
+  {
+    category: "Image Processing",
+    technologies: [
+      "Pillow",
+    ],
+  },
+  {
+    category: "AI / Computer vision",
+    technologies: [
+      "OpenCV",
+      "face_recognition",
+      "dlib",
+      "NumPy",
+    ],
+  },
+
+  {
+    category: "Visualization",
+    technologies: [
+      "Chart.js",
+    ],
+  },
+],
 
   features: [
     "Face Recognition Attendance",
@@ -160,18 +205,61 @@ export const projects = [
     "Automatic Attendance Recording",
     "Attendance Reports",
     "Admin Dashboard",
-    "Student Management"
+    "Student Management",
+    "Secure Database Management",
+    "Responsive Web Interface"
   ],
 
-  challenges: [],
+  challenges: [
+    "Face Recognition Accuracy: Handling variations in lighting, face angle, image quality, and facial appearance.",
+    "Real-Time Processing: Processing camera frames and recognizing faces quickly enough for smooth attendance marking.",
+    "Session Validation: Ensuring attendance is marked only for the selected course and semester.",
+    "Duplicate Attendance: Preventing the same student from being marked multiple times in the same attendance session.",
+    "Error Handling: Handling cases such as unrecognized faces, missing images, camera failures, and incorrect attendance sessions."
+  ],
 
-  keyLearnings: [],
+  keyLearnings: [
+    "Developed a complete web application using Django.",
+    "Gained practical experience with OpenCV and face_recognition for real-time facial recognition.",
+    "Learned how to store and manage application data using PostgreSQL and Django ORM.",
+    "Improved skills in debugging, testing, database management, and UI development.",
+    "Integrated computer vision with a web-based application to automate attendance.",
+    "Gained hands-on experience throughout the requirements, design, development, and testing lifecycle."
+  ],
 
-  images: [],
+  images: [
+  {
+    src: loginImg,
+    title: "Secure Login",
+    description:
+      "Provides authenticated access to the attendance management system through a secure administrator login.",
+  },
 
-  architectureImage:"#",
+  {
+    src: adminImg,
+    title: "Admin Dashboard",
+    description:
+      "Centralized dashboard for managing students, courses, attendance sessions, and overall attendance activity.",
+  },
 
-  github: "#",
+  {
+    src: faceRecognitionImg,
+    title: "Face Recognition",
+    description:
+      "Uses real-time facial recognition to identify registered students and automatically record their attendance.",
+  },
+
+  {
+    src: attendanceReportImg,
+    title: "Attendance Reports",
+    description:
+      "Provides structured attendance reports for monitoring student attendance across courses and semesters.",
+  },
+],
+
+  architectureImage: attendanceImg,
+
+  github: "https://github.com/Anfas007/smart-attendance-management-system",
 
   demo: "#"
 }

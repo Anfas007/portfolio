@@ -9,7 +9,7 @@ export const SITE = {
   ],
 
   tagline:
-    "I build scalable backend systems, secure REST APIs, and AI-powered applications with a focus on clean architecture and real-world problem solving.",
+    "I create scalable and intelligent software solutions that combine thoughtful engineering, secure architecture, and meaningful user experiences.",
 
   email: "anfascp2001@email.com",
 

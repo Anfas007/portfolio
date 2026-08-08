@@ -13,10 +13,10 @@ import Container from "../ui/Container";
 
 // Updated highlights with dark-mode friendly translucent backgrounds and neon text
 const highlights = [
-  { text: "AI & Machine Learning", icon: Sparkles, color: "text-purple-400", bg: "bg-purple-500/10" },
-  { text: "Backend Architecture", icon: Server, color: "text-blue-400", bg: "bg-blue-500/10" },
-  { text: "Cloud & AI Security", icon: ShieldCheck, color: "text-emerald-400", bg: "bg-emerald-500/10" },
-  { text: "Flutter & React", icon: Code2, color: "text-sky-400", bg: "bg-sky-500/10" },
+  { text: "AI & Intelligent Systems", icon: Sparkles, color: "text-purple-400", bg: "bg-purple-500/10" },
+  { text: "Backend & API Development", icon: Server, color: "text-blue-400", bg: "bg-blue-500/10" },
+  { text: "Software Architecture", icon: ShieldCheck, color: "text-emerald-400", bg: "bg-emerald-500/10" },
+  { text: "Web & Mobile Development", icon: Code2, color: "text-sky-400", bg: "bg-sky-500/10" },
 ];
 
 export default function About() {
@@ -82,7 +82,7 @@ export default function About() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Education</p>
-                    <p className="font-semibold text-slate-200">Final-Year MCA Student</p>
+                    <p className="font-semibold text-slate-200">MCA Graduate</p>
                   </div>
                 </div>
 
@@ -91,8 +91,8 @@ export default function About() {
                     <Code2 size={20} />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Core Stack</p>
-                    <p className="font-semibold text-slate-200">Python, FastAPI, React</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Core Focus</p>
+                    <p className="font-semibold text-slate-200">Software Engineering & Intelligent Systems</p>
                   </div>
                 </div>
 
@@ -114,22 +114,15 @@ export default function About() {
 
             <div className="mt-6 space-y-6 text-lg leading-relaxed text-slate-400">
               <p>
-                I'm <strong className="text-slate-200">Mohammed Anfas CP</strong>, a final-year MCA student
-                and software engineer passionate about designing scalable backend
-                systems and intelligent applications that solve real-world problems.
+                I'm <strong className="text-slate-200">Mohammed Anfas CP</strong>, an MCA graduate and software engineer focused on building scalable, secure, and intelligent software solutions.
               </p>
               
               <p>
-                My expertise spans Python, FastAPI, React, and Flutter, with a strong 
-                focus on developing secure, AI-driven technology—particularly in the 
-                healthcare space. I care deeply about building robust architectures 
-                (with an eye for AI and cloud security) while crafting premium, 
-                minimalist user experiences.
+                I enjoy turning complex problems into clean, practical, and meaningful digital experiences, while continuously exploring modern technologies and better ways to build software.
               </p>
               
               <p>
-                I'm always eager to learn modern technologies and contribute to 
-                challenging, impactful software engineering projects.
+                Always learning. Always building. Always looking for the next problem worth solving
               </p>
             </div>
 

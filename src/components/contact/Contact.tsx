@@ -1,22 +1,65 @@
-import { Mail, MapPin, Send } from "lucide-react";
-import { FiLinkedin, FiInstagram } from "react-icons/fi";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { FiInstagram, FiLinkedin } from "react-icons/fi";
 
 import { SITE } from "../../data/site";
 
 export default function Contact() {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+ const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget; // save the form before await
+
+  setIsSending(true);
+  setStatus("idle");
+  setErrorMessage("");
+
+  try {
+    const result = await emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      form,
+      {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      }
+    );
+
+    console.log("EmailJS success:", result);
+
+    setStatus("success");
+    form.reset(); // use saved form reference
+  } catch (error: any) {
+    console.error("EmailJS error:", error);
+
+    setStatus("error");
+
+    setErrorMessage(
+      error?.text ||
+        error?.message ||
+        "Unable to send message. Please try again."
+    );
+  } finally {
+    setIsSending(false);
+  }
+};
+
   return (
     <section
       id="contact"
       className="relative overflow-hidden bg-slate-950 py-24"
     >
-      {/* ================= Ambient Dark Mode Glows ================= */}
+      {/* Ambient Glows */}
       <div className="pointer-events-none absolute left-0 top-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/20 blur-[120px]" />
 
       <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[400px] translate-x-1/3 translate-y-1/3 rounded-full bg-indigo-600/20 blur-[100px]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
-
-        {/* ================= Heading ================= */}
+        {/* Heading */}
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-blue-400">
             Contact Me
@@ -32,7 +75,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* ================= Contact Cards ================= */}
+        {/* Contact Cards */}
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* Email */}
@@ -48,7 +91,7 @@ export default function Contact() {
               Email
             </p>
 
-            <p className="mt-1 text-sm font-semibold text-slate-200">
+            <p className="mt-1 break-all text-sm font-semibold text-slate-200">
               {SITE.email}
             </p>
           </a>
@@ -109,7 +152,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* ================= Contact Form ================= */}
+        {/* Contact Form */}
         <div className="mx-auto mt-16 max-w-xl rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-xl backdrop-blur-md sm:p-10">
 
           <div className="text-center">
@@ -122,7 +165,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <form className="mt-8 space-y-5">
+          <form onSubmit={sendEmail} className="mt-8 space-y-5">
 
             {/* Name */}
             <div>
@@ -136,7 +179,8 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
-                name="name"
+                name="from_name"
+                required
                 placeholder="John Doe"
                 className="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500 focus:bg-white/5 focus:ring-1 focus:ring-blue-500"
               />
@@ -154,7 +198,8 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="reply_to"
+                required
                 placeholder="john@example.com"
                 className="mt-2 w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500 focus:bg-white/5 focus:ring-1 focus:ring-blue-500"
               />
@@ -172,23 +217,49 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
+                required
                 rows={4}
                 placeholder="Tell me about your project or how I can help..."
                 className="mt-2 w-full resize-none rounded-2xl border border-white/10 bg-black/20 px-4 py-3.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500 focus:bg-white/5 focus:ring-1 focus:ring-blue-500"
               />
             </div>
 
+            {/* Success Message */}
+            {status === "success" && (
+              <div className="flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-3 text-sm text-emerald-400">
+                <CheckCircle size={18} />
+                Message sent successfully!
+              </div>
+            )}
+
+            {/* Error Message */}
+            {status === "error" && (
+              <div className="flex items-start gap-2 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-sm text-red-400">
+                <AlertCircle size={18} className="mt-0.5 shrink-0" />
+
+                <div>
+                  <p>Failed to send message.</p>
+                  <p className="mt-1 text-xs text-red-400/80">
+                    {errorMessage}
+                  </p>
+                </div>
+              </div>
+            )}
+
             {/* Submit */}
             <button
               type="submit"
-              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-blue-600 px-5 py-4 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition-all hover:bg-blue-500 active:scale-[0.98]"
+              disabled={isSending}
+              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-blue-600 px-5 py-4 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition-all hover:bg-blue-500 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send Message
+              {isSending ? "Sending..." : "Send Message"}
 
-              <Send
-                size={18}
-                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-              />
+              {!isSending && (
+                <Send
+                  size={18}
+                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              )}
             </button>
 
           </form>
