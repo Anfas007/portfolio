@@ -1,4 +1,4 @@
-import resume from "../assets/resume/Mohammed_Anfas_CP_Resume.pdf";
+
 export const SITE = {
   name: "Anfas CP",
   fullName: "MOHAMMED ANFAS",
@@ -17,5 +17,5 @@ export const SITE = {
 
   instagram: "https://instagram.com/anfas__cp/",
 
-  resume,
+  resume: "/resume/Mohammed_Anfas_CP_Resume.pdf",
 };
