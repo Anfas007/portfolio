@@ -89,14 +89,14 @@ const Navbar = () => {
                   
                   {/* Mobile Resume Button */}
                   <div className="mt-4 px-2 pb-2">
-                    <a
-  href={SITE.resume}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-blue-500"
->
-  Resume
-</a>
+                    <a 
+                      href={SITE.resume}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex w-full justify-center rounded-2xl bg-blue-600 py-3.5 text-sm font-bold text-white transition-colors hover:bg-blue-500"
+                    >
+                      Resume
+                    </a>
                   </div>
                 </div>
               </div>
