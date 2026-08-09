@@ -93,8 +93,9 @@ const Navbar = () => {
   href={SITE.resume}
   target="_blank"
   rel="noopener noreferrer"
+  className="text-blue-500"
 >
-  View Resume
+  Resume
 </a>
                   </div>
                 </div>
