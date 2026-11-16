@@ -18,7 +18,7 @@ export const projects = [
     title: "AI Emergency Health Passport",
 
     shortDescription:
-      "An AI-powered healthcare platform designed to provide secure, privacy-aware access to critical patient information during medical emergencies.",
+      "A healthcare platform that helps doctors and first responders access important patient information during emergencies.",
 
     overview:
       "Developed a healthcare platform that enables first responders and hospitals to securely access essential patient medical records through QR-based emergency access, while maintaining privacy and controlled access to sensitive information.",
@@ -141,7 +141,7 @@ export const projects = [
   title: "Smart Attendance Management System",
 
   shortDescription:
-    "Automating attendance with computer vision to make student tracking faster, more accurate, and less dependent on manual processes.",
+    "A face-recognition system that records student attendance and provides simple reports for administrators.",
 
   overview:
     "Developed a web-based Smart Attendance Management System using Django, OpenCV, face_recognition, and PostgreSQL to automate student identification and attendance recording. The system allows administrators to manage student records, capture attendance through real-time face recognition, validate students based on course and semester, and monitor attendance through a centralized dashboard.",

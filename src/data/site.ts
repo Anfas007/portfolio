@@ -4,12 +4,12 @@ export const SITE = {
   fullName: "MOHAMMED ANFAS",
 
   roles: [
-    "Software Engineer",
+    "Junior Software Developer",
     "Python Developer",
   ],
 
   tagline:
-    "I create scalable and intelligent software solutions that combine thoughtful engineering, secure architecture, and meaningful user experiences.",
+    "I am an MCA graduate who enjoys building useful software and growing as a developer.",
 
   email: "anfascp2001@email.com",
 
