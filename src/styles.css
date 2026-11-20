@@ -553,7 +553,7 @@ body.dark .highlight svg {
 .focus-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 22px;
+  gap: 16px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -562,15 +562,37 @@ body.dark .highlight svg {
 .focus-list li {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
   color: var(--ink);
-  font-size: 12.5px;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.focus-list li:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
 }
 
 .focus-list svg {
+  width: 22px;
+  height: 22px;
   color: var(--accent);
   flex: 0 0 auto;
 }
+
+@media (max-width: 640px) {
+  .focus-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 body.dark .focus-list svg {
   color: var(--yellow);
@@ -1494,7 +1516,4 @@ body.dark .contact-card svg {
   .hero-banner { min-height: 270px; }
 }
 
-.bio-italian strong {
-  color: var(--accent);
-  font-weight: 700;
-}
+

@@ -24,4 +24,6 @@ export const SITE = {
   instagram: "https://instagram.com/anfas__cp/",
 
   resume: "/resume/Mohammed_Anfas_CP_Resume.pdf",
+
+  github: "https://github.com/Anfas007/",
 };
