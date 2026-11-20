@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, GraduationCap, MapPin, Server, ShieldCheck, Sparkles } from "lucide-react";
+import { Code2, Server, ShieldCheck, Sparkles } from "lucide-react";
 
 const highlights = [["AI & Intelligent Systems", Sparkles], ["Backend & API Development", Server], ["Software Architecture", ShieldCheck], ["Web & Mobile Development", Code2]] as const;
 
