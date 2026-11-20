@@ -4,12 +4,18 @@ export const SITE = {
   fullName: "MOHAMMED ANFAS",
 
   roles: [
-    "Junior Software Developer",
-    "Python Developer",
+    "Technology Enthusiast",
+    "Kerala, India",
   ],
 
+  headline1:
+    "Engineering ideas",
+  headline2:
+    "Building what matters.",
+
+
   tagline:
-    "I am an MCA graduate who enjoys building useful software and growing as a developer.",
+    "I build software, explore the systems behind it, and connect the dots between development, cloud, DevOps and security.",
 
   email: "anfascp2001@email.com",
 

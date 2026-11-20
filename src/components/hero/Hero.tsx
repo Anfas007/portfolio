@@ -8,9 +8,8 @@ export default function Hero() {
   return <section id="home" className="hero">
     <div className="container hero-grid">
       <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .6 }}>
-        <p className="eyebrow">Junior software developer / Kerala, India</p>
-        <h1>Build<br /><span>with intent.</span></h1>
-        <p className="hero-role">Python · React · Backend Development</p>
+        <p className="eyebrow">{SITE.roles.join(" / ")}</p>
+        <h1>{SITE.headline1}<br /><span>{SITE.headline2}</span></h1>
         <p className="hero-copy">{SITE.tagline}</p>
         <div className="hero-buttons"><a className="button button-primary" href="#projects">Explore my work <ArrowDown size={15} /></a><a className="button button-secondary" href="#contact">Let's connect ↗</a></div>
         <div className="socials"><a href={SITE.linkedin} target="_blank" rel="noreferrer"><FiLinkedin /> LinkedIn</a><a href="https://github.com/Anfas007" target="_blank" rel="noreferrer"><FiGithub /> GitHub</a><a href={SITE.instagram} target="_blank" rel="noreferrer"><FiInstagram /> Instagram</a><a href={`mailto:${SITE.email}`}><Mail size={15} /> Email</a></div>
